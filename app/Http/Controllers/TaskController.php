@@ -39,8 +39,14 @@ class TaskController extends Controller {
 
 	return redirect(route('tasks.index'));
     }
+    
+//    public function edit(Task $task){
+//	$task->edit();
+//	
+//    }
 
     public function destroy(Task $task) {
+	$this->authorize('destroy', $task);
 	$task->delete();
 	return redirect(route('tasks.index'));
     }
