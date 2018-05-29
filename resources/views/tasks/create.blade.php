@@ -8,6 +8,7 @@
                 <div class="panel-heading">Create new task</div>
 
                 <div class="panel-body">
+		    @include('common.errors');
 		    <!-- Форма новой задачи -->
 		    <form action="{{ url(route('tasks.store')) }}" method="POST" class="form-horizontal">
 			{{ csrf_field() }}
